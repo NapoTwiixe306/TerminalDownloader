@@ -18,7 +18,7 @@ class Init:
         if choice == "1":
             self.install_node()
         elif choice == "2":
-            print("You chose option 2.")
+            self.install_vscode()
         elif choice == "3":
             self.create_folder()
         elif choice == "4":
@@ -37,6 +37,22 @@ class Init:
         if node_path not in path:
             os.environ['PATH'] = node_path + ':' + path
             print("Added node to PATH")
+
+    # Install VsCode
+    def install_vscode(self):
+        # DownLoad vscode package
+        subprocess.run(["wget", "-O", "code.deb", "https://go.microsoft.com/fwlink/?LinkID=760868"])
+
+        # Install package using dpkg
+        subprocess.run(["sudo", "dpkg", "-i", "code.deb"])
+
+        # Install missing dependencies
+        subprocess.run(["sudo", "apt-get", "install", "-f"])
+
+        # Run VsCode
+        subprocess.run(["code", "."])
+        print("Visual Studio Code installed successfully.")
+
 
     # Creation of file with extension of your choice (on the desktop)
     def create_file(self):
