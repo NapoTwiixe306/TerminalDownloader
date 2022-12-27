@@ -7,20 +7,35 @@ class Init:
         self.choose = "1) Install Node\n"
         self.choose1 = "2) Install Visual Studio Code\n"
         self.choose2 = "3) Mkdir && Cd\n"
+        self.choose3 = "4) Create File on a desktop\n"
 
     def run(self):
-        print(self.welcome_message, self.choose, self.choose1, self.choose2)
+        print(self.welcome_message, self.choose, self.choose1, self.choose2, self.choose3)
 
 
-        choice = input("Please choose one of the following options: 1, 2, or 3: ")
+        choice = input("Please choose one of the following options: 1, 2, 3 or 4: ")
         if choice == "1":
             print("You chose option 1.")
         elif choice == "2":
             print("You chose option 2.")
         elif choice == "3":
             self.create_folder()
+        elif choice == "4":
+            self.create_file()
         else:
             print("Invalid choice.")
+
+    def create_file(self):
+        desktop = os.path.join(USERPROFILE, 'Desktop')
+        file_name = input("Please enter the name for the new file: ")
+        file_extension = input("Please enter the extension for the new file (e.g. .txt): ")
+        file_path = os.path.join(desktop, file_name + file_extension)
+        try:
+            with open(file_path, 'w') as f:
+                f.write("This is a test file.")
+            print("File created successfully at " + file_path)
+        except OSError:
+            print("Error: Could not create file.")
 
     def create_folder(self):
         desktop = os.path.join(USERPROFILE, 'Desktop')
