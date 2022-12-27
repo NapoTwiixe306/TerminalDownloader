@@ -1,9 +1,10 @@
 import os
+import subprocess
 
 USERPROFILE = os.path.expanduser('~')
 class Init:
     def __init__(self):
-        self.welcome_message = "Welcome NapoTwiixe !\n"
+        self.welcome_message = "Welcome NapoTwiixe ! \nAttention, the root password will be asked for certain commands, to switch to sudo mode !\n\nwhat do you want to do\n"
         self.choose = "1) Install Node\n"
         self.choose1 = "2) Install Visual Studio Code\n"
         self.choose2 = "3) Mkdir && Cd\n"
@@ -15,7 +16,7 @@ class Init:
 
         choice = input("Please choose one of the following options: 1, 2, 3 or 4: ")
         if choice == "1":
-            print("You chose option 1.")
+            self.install_node()
         elif choice == "2":
             print("You chose option 2.")
         elif choice == "3":
@@ -25,7 +26,19 @@ class Init:
         else:
             print("Invalid choice.")
 
-    # Creation de fichier avec extension au choix ( sur le bureau)
+    # Node.Js Install
+    def install_node(self):
+        subprocess.run (["sudo", "apt-get", "install", "nodejs"])
+        print("Node.Js installed Successfully")
+
+        # Add To Path
+        path = os.environ['PATH']
+        node_path = os.path.join(USERPROFILE, 'node_modules', '.bin')
+        if node_path not in path:
+            os.environ['PATH'] = node_path + ':' + path
+            print("Added node to PATH")
+
+    # Creation of file with extension of your choice (on the desktop)
     def create_file(self):
         desktop = os.path.join(USERPROFILE, 'Desktop')
         file_name = input("Please enter the name for the new file: ")
@@ -37,7 +50,7 @@ class Init:
             print("File created successfully at " + file_path)
         except OSError:
             print("Error: Could not create file.")
-    # Creation d'un dossier avec nom au choix ( sur le bureau)
+    # Ccreation of a folder with a name of your choice (on the desktop)
     def create_folder(self):
         desktop = os.path.join(USERPROFILE, 'Desktop')
         folder_name = input("Please enter the name for the new folder: ")
