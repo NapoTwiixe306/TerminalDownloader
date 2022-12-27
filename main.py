@@ -5,7 +5,7 @@ class Init:
     def __init__(self):
         self.welcome_message = "Welcome NapoTwiixe !\n"
         self.choose = "1) Install Node\n"
-        self.choose1 = "2) Install Python\n"
+        self.choose1 = "2) Install Visual Studio Code\n"
         self.choose2 = "3) Mkdir && Cd\n"
 
     def run(self):
