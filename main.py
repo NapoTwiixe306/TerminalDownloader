@@ -25,6 +25,7 @@ class Init:
         else:
             print("Invalid choice.")
 
+    # Creation de fichier avec extension au choix ( sur le bureau)
     def create_file(self):
         desktop = os.path.join(USERPROFILE, 'Desktop')
         file_name = input("Please enter the name for the new file: ")
@@ -36,7 +37,7 @@ class Init:
             print("File created successfully at " + file_path)
         except OSError:
             print("Error: Could not create file.")
-
+    # Creation d'un dossier avec nom au choix ( sur le bureau)
     def create_folder(self):
         desktop = os.path.join(USERPROFILE, 'Desktop')
         folder_name = input("Please enter the name for the new folder: ")
