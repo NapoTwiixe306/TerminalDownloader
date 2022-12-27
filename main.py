@@ -6,22 +6,25 @@ class Init:
     def __init__(self):
         self.welcome_message = "Welcome NapoTwiixe ! \nAttention, the root password will be asked for certain commands, to switch to sudo mode !\n\nwhat do you want to do\n"
         self.choose = "1) Install Node\n"
-        self.choose1 = "2) Install Visual Studio Code\n"
-        self.choose2 = "3) Mkdir && Cd\n"
-        self.choose3 = "4) Create File on a desktop\n"
+        self.choose0 = "2) Install Node for MacOs\n"
+        self.choose1 = "3) Install Visual Studio Code\n"
+        self.choose2 = "4) Mkdir && Cd\n"
+        self.choose3 = "5) Create File on a desktop\n"
 
     def run(self):
-        print(self.welcome_message, self.choose, self.choose1, self.choose2, self.choose3)
+        print(self.welcome_message, self.choose, self.choose0,  self.choose1, self.choose2, self.choose3)
 
 
-        choice = input("Please choose one of the following options: 1, 2, 3 or 4: ")
+        choice = input("Please choose one of the following options: 1, 2, 3, 4 or 5: ")
         if choice == "1":
             self.install_node()
         elif choice == "2":
-            self.install_vscode()
+            self.node_macos()
         elif choice == "3":
-            self.create_folder()
+            self.install_vscode()
         elif choice == "4":
+            self.create_folder()
+        elif choice == "5":
             self.create_file()
         else:
             print("Invalid choice.")
@@ -38,7 +41,11 @@ class Init:
         if node_path not in path:
             os.environ['PATH'] = node_path + ':' + path
             print("Added node to PATH")
-
+    # Node.Js MacOs
+    def node_macos(self):
+        subprocess.run(["brew", "install", "node"])
+        print("Node.js installed successfully")
+        
     # Install VsCode
     def install_vscode(self):
         # DownLoad vscode package
