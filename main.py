@@ -1,14 +1,16 @@
 import os
 
 USERPROFILE = os.path.expanduser('~')
-
-
-class MyClass:
+class Init:
     def __init__(self):
-        self.welcome_message = "Welcome to MyClass!"
+        self.welcome_message = "Welcome NapoTwiixe !\n"
+        self.choose = "1) Install Node\n"
+        self.choose1 = "2) Install Python\n"
+        self.choose2 = "3) Mkdir && Cd\n"
 
     def run(self):
-        print(self.welcome_message)
+        print(self.welcome_message, self.choose, self.choose1, self.choose2)
+
 
         choice = input("Please choose one of the following options: 1, 2, or 3: ")
         if choice == "1":
@@ -32,13 +34,12 @@ class MyClass:
         except OSError:
             print("Error: Could not create folder.")
 
-my_class = MyClass()
-my_class.run()
+init = Init()
+init.run()
 
 # class Commands:
 #     def node():
 #         print("ici raccourcis du node install")
-#         USERPROFILE = os.path.expanduser('~')
 
 #     def npminstall():
 #         print("raccourcis du npm install")
