@@ -1,4 +1,7 @@
 class Init:
+    print
+
+class Commands:
     def node():
         print("ici raccourcis du node install")
 
