@@ -30,6 +30,7 @@ class Init:
     def install_node(self):
         subprocess.run (["sudo", "apt-get", "install", "nodejs"])
         print("Node.Js installed Successfully")
+        subprocess.run(["node", "--version"])
 
         # Add To Path
         path = os.environ['PATH']
