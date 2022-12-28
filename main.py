@@ -41,10 +41,12 @@ class Init:
         if node_path not in path:
             os.environ['PATH'] = node_path + ':' + path
             print("Added node to PATH")
+
     # Node.Js MacOs
     def node_macos(self):
         subprocess.run(["brew", "install", "node"])
         print("Node.js installed successfully")
+        
         
     # Install VsCode
     def install_vscode(self):
@@ -74,6 +76,8 @@ class Init:
             print("File created successfully at " + file_path)
         except OSError:
             print("Error: Could not create file.")
+
+
     # Ccreation of a folder with a name of your choice (on the desktop)
     def create_folder(self):
         desktop = os.path.join(USERPROFILE, 'Desktop')
