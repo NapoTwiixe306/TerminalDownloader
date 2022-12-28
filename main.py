@@ -1,3 +1,5 @@
+#! /usr/bin/env python3
+
 import os
 import subprocess
 
@@ -7,7 +9,7 @@ class Init:
         self.welcome_message = "Welcome NapoTwiixe ! \nAttention, the root password will be asked for certain commands, to switch to sudo mode !\n\nwhat do you want to do\n"
         self.choose = "1) Install Node\n"
         self.choose0 = "2) Install Node for MacOs\n"
-        self.choose1 = "3) Install Visual Studio Code\n"
+        self.choose1 = "3) Install Visual Studio Code For Ubuntu\n"
         self.choose2 = "4) Mkdir && Cd\n"
         self.choose3 = "5) Create File on a desktop\n"
 
@@ -46,7 +48,7 @@ class Init:
     def node_macos(self):
         subprocess.run(["brew", "install", "node"])
         print("Node.js installed successfully")
-        
+
         
     # Install VsCode
     def install_vscode(self):
