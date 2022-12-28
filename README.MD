@@ -1,4 +1,4 @@
-# Cmder.py
+# TerminalDownloader.py
 
 Cmder py est un installer de tout, il permet, en faisant un choix, d'installer Node, Python, Npm, ...
 et de créer un dossier, avec un nom défini par l'utilisateur, qui sera directement redirigé dedans
