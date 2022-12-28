@@ -7,7 +7,14 @@ et de créer un dossier, avec un nom défini par l'utilisateur, qui sera directe
 ```bash
 1) git clone https://github.com/NapoTwiixe306/Cmder
 2) cd Cmder
-3) cd src
-4) python3 main.py
+3) python3 main.py
 ```
+## Second choix D'installation
+```bash
+1) git clone https://github.com/NapoTwiixe306/Cmder
+2) cd Cmder
+3) chmod +x main.py
+4) ./main.py
+```
+
 après avoir exécuté cette commande, vous aurez une palette de choix à votre disposition, à vous de faire votre choix
