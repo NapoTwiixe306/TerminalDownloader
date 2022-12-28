@@ -5,13 +5,13 @@ et de créer un dossier, avec un nom défini par l'utilisateur, qui sera directe
 
 ## Installation
 ```bash
-1) git clone https://github.com/NapoTwiixe306/Cmder
+1) git clone https://github.com/NapoTwiixe306/TerminalDownloader.git
 2) cd Cmder
 3) python3 main.py
 ```
 ## Second choix D'installation
 ```bash
-1) git clone https://github.com/NapoTwiixe306/Cmder
+1) git clone https://github.com/NapoTwiixe306/TerminalDownloader.git
 2) cd Cmder
 3) chmod +x main.py
 4) ./main.py
